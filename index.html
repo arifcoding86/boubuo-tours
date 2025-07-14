@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boubuo Tour Jogja - Paket Wisata & Guide Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --accent: #FFE66D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .hero {
+            height: 80vh;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/88b8364b-4ffb-44c7-b377-934b261ca9b1.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .destination-card {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .destination-overlay h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .package-highlights {
+            margin: 2rem 0;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-icon {
+            background-color: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .stars {
+            color: var(--accent);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-circle">B</div>
+                    <span class="logo-text">Boubuo Tour Jogja</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">Tentang Kami</a>
+                    <a href="#services">Paket Wisata</a>
+                    <a href="#destinations">Destinasi</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Jelajahi Keindahan Jogja Dengan Boubuo Tour</h1>
+                <p>Pengalaman wisata yang tak terlupakan dengan guide profesional dan paket wisata terbaik di Yogyakarta.</p>
+                <a href="#services" class="btn">Lihat Paket Wisata</a>
+                <a href="https://wa.me/6281212399614" class="btn btn-secondary" target="_blank">Booking Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Boubuo Tour Jogja</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560869713-5f61e524a02f" alt="Team Boubuo Tour sedang memandu wisatawan di Candi Borobudur dengan senyuman ramah">
+                </div>
+                <div class="about-text">
+                    <h3>Pengalaman Wisata Terbaik di Jogjakarta</h3>
+                    <p>Boubuo Tour Jogja hadir sebagai penyedia jasa guide dan paket wisata profesional di Yogyakarta. Dengan pengalaman lebih dari 5 tahun melayani wisatawan lokal maupun mancanegara, kami berkomitmen memberikan pengalaman wisata yang berkesan.</p>
+                    <p>Tim guide kami terdiri dari pemandu wisata bersertifikat yang ramah, berpengalaman, serta menguasai berbagai bahasa (Indonesia, Inggris, Jepang). Kami memahami seluk-beluk Jogja dan siap menunjukkan keindahannya kepada Anda.</p>
+                    
+                    <div class="package-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4>Fleksibel & Customizable</h4>
+                                <p>Paket wisata bisa disesuaikan dengan kebutuhan dan budget Anda</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div>
+                                <h4>Transportasi Nyaman</h4>
+                                <p>Armada terawat dengan sopir profesional berpengalaman</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4>Kuliner Lokal</h4>
+                                <p>Rekomendasi tempat makan enak dengan harga terjangkau</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Paket Wisata Pilihan</h2>
+                <p>Berbagai pilihan paket wisata dengan harga terjangkau</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1555433237-1c84e268c759" alt="Paket wisata Jogja klasik dengan foto Candi Prambanan di senja hari">
+                    </div>
+                    <div class="service-content">
+                        <h3>Jogja Klasik Tour</h3>
+                        <p>Wisata menyusuri destinasi wajib di Jogja selama 1 hari penuh.</p>
+                        <ul>
+                            <li>- Candi Prambanan</li>
+                            <li>- Kraton Yogyakarta</li>
+                            <li>- Taman Sari</li>
+                            <li>- Malioboro</li>
+                        </ul>
+                        <div class="price">Rp 500.000/orang</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Jogja%20Klasik%20Tour" class="btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1518631012426-295fc9eee746" alt="Paket Borobudur Sunrise dengan pemandangan matahari terbit di balik candi">
+                    </div>
+                    <div class="service-content">
+                        <h3>Borobudur Sunrise Tour</h3>
+                        <p>Pengalaman melihat sunrise dari Candi Borobudur.</p>
+                        <ul>
+                            <li>- Sunrise di Borobudur</li>
+                            <li>- Museum Karmawibhangga</li>
+                            <li>- Candi Mendut</li>
+                            <li>- Desa Wisata</li>
+                        </ul>
+                        <div class="price">Rp 600.000/orang</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Borobudur%20Sunrise%20Tour" class="btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/68a28f5a-6048-4089-9d19-a1738adef9ff.png" alt="Paket Malioboro Night Tour dengan jalanan Malioboro yang berwarna-warni di malam hari">
+                    </div>
+                    <div class="service-content">
+                        <h3>Malioboro Night Tour</h3>
+                        <p>Menjelajahi Malioboro di malam hari dengan pemandu lokal.</p>
+                        <ul>
+                            <li>- Kuliner Malioboro malam</li>
+                            <li>- Street performance</li>
+                            <li>- Belanja oleh-oleh</li>
+                            <li>- Cerita sejarah Malioboro</li>
+                        </ul>
+                        <div class="price">Rp 350.000/orang</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Malioboro%20Night%20Tour" class="btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ab810ec0-bd7f-499c-a2b6-c35d0e8e75c2.png" alt="Paket Jogja Adventure dengan foto Gunung Merapi dan lava tour">
+                    </div>
+                    <div class="service-content">
+                        <h3>Jogja Adventure Tour</h3>
+                        <p>Wisata petualangan di Jogja untuk pengalaman seru.</p>
+                        <ul>
+                            <li>- Lava Tour Merapi</li>
+                            <li>- Air terjun Sri Gethuk</li>
+                            <li>- Tebing Breksi</li>
+                            <li>- Goa Pindul</li>
+                        </ul>
+                        <div class="price">Rp 750.000/orang</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Jogja%20Adventure%20Tour" class="btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01990c5f-d81e-4b9c-aac9-2f1edd26cbf4.png" alt="Paket Jogja Heritage dengan foto Keraton Yogyakarta dari dekat">
+                    </div>
+                    <div class="service-content">
+                        <h3>Jogja Heritage Tour</h3>
+                        <p>Menyusuri warisan budaya dan sejarah Jogja.</p>
+                        <ul>
+                            <li>- Keraton Yogyakarta</li>
+                            <li>- Batik workshop</li>
+                            <li>- Makam Raja-raja Mataram</li>
+                            <li>- Museum Sonobudoyo</li>
+                        </ul>
+                        <div class="price">Rp 550.000/orang</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Jogja%20Heritage%20Tour" class="btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/56a9127a-c87c-4c05-a25a-a4efedfaa1db.png" alt="Paket Private Tour dengan foto keluarga sedang berwisata dengan guide Boubuo">
+                    </div>
+                    <div class="service-content">
+                        <h3>Private Custom Tour</h3>
+                        <p>Paket wisata privat sesuai keinginan Anda.</p>
+                        <ul>
+                            <li>- Destinasi sesuai request</li>
+                            <li>- Guide privat</li>
+                            <li>- Fleksibel waktu</li>
+                            <li>- Termasuk transportasi</li>
+                        </ul>
+                        <div class="price">Mulai Rp 1.000.000/hari</div>
+                        <a href="https://wa.me/2681212399614?text=Saya%20tertarik%20dengan%20paket%20Private%20Custom%20Tour" class="btn" target="_blank">Konsultasi Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Destinasi Populer di Jogja</h2>
+                <p>Temukan keindahan Yogyakarta melalui destinasi-destinasi unggulan kami</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1560869713-5f61e524a02f" alt="Pintu masuk utama Candi Borobudur dengan struktur megah">
+                    <div class="destination-overlay">
+                        <h3>Candi Borobudur</h3>
+                        <p>Warisan dunia UNESCO dan candi Budha terbesar di dunia</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1555433237-1c84e268c759" alt="Candi Prambanan siluet senja dengan latar langit berwarna oranye">
+                    <div class="destination-overlay">
+                        <h3>Candi Prambanan</h3>
+                        <p>Kompleks candi Hindu megah peninggalan abad ke-9</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1601541819200-db602a6da1a3" alt="Jalan Malioboro yang ramai dengan becak dan pedagang">
+                    <div class="destination-overlay">
+                        <h3>Malioboro</h3>
+                        <p>Jalan legendaris pusat kuliner dan belanja khas Jogja</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2407d28-6b9f-4066-97f3-d91e02f940d8.png" alt="Pemandangan gunung Merapi dari kejauhan dengan awan menggulung">
+                    <div class="destination-overlay">
+                        <h3>Gunung Merapi</h3>
+                        <p>Gunung berapi aktif dengan panorama spektakuler</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8b9b271c-9629-4f7f-9de2-e0ae6ff9f947.png" alt="Pantai Parangtritis dengan ombak besar dan tebing karang">
+                    <div class="destination-overlay">
+                        <h3>Pantai Parangtritis</h3>
+                        <p>Pantai eksotis dengan mitos dan panorama memukau</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/251c61ca-8d4b-4d72-8f36-f6f3fead663e.png" alt="Pintu masuk utama Keraton Yogyakarta dengan arsitektur tradisional Jawa">
+                    <div class="destination-overlay">
+                        <h3>Keraton Yogyakarta</h3>
+                        <p>Istana resmi Kesultanan Yogyakarta yang masih aktif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Mereka?</h2>
+                <p>Testimonial dari pelanggan Boubuo Tour</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Pengalaman tour dengan Boubuo benar-benar memuaskan. Guide kami sangat ramah dan berpengetahuan luas tentang sejarah Jogja. Mereka juga fleksibel mengatur itinerary sesuai kebutuhan kami."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/51c89fb2-0fd3-4463-a92c-04daa52776a3.png" alt="Foto profil keluarga Tanaka">
+                    </div>
+                    <div class="author-info">
+                        <h4>Keluarga Tanaka</h4>
+                        <p>Tokyo, Jepang</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Borobudur Sunrise Tour-nya luar biasa! Bangun pagi benar-benar worth it untuk melihat sunrise dari Borobudur. Guide Boubuo sangat membantu mengambil foto-foto bagus untuk kami."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e4d1a38a-2af5-4e47-9c81-cbb30ea2465f.png" alt="Foto profil pasangan Sarah dan Dito">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah & Dito</h4>
+                        <p>Jakarta, Indonesia</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Butuh informasi lebih lanjut? Tim kami siap membantu</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <p>Jl. Parangtritis Km 5, Yogyakarta, Indonesia</p>
+                    <p>Email: info@boubuotour.com</p>
+                    <p>Telepon: (0274) 1234567</p>
+                    
+                    <h4>Jam Operasional</h4>
+                    <p>Senin - Minggu: 8:00 - 20:00 WIB</p>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" placeholder="Nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telepon</label>
+                            <input type="tel" id="phone" placeholder="Nomor telepon">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-circle">B</div>
+                <span class="logo-text">Boubuo Tour Jogja</span>
+            </div>
+            <p>Memberikan pengalaman wisata terbaik di Yogyakarta</p>
+            <p>© 2023 Boubuo Tour Jogja. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2681212399614" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Animation for scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih pesanan Anda telah kami terima. Tim kami akan segera menghubungi Anda.');
+            form.reset();
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
+```
